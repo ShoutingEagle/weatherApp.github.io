@@ -2,16 +2,17 @@
 
 
 var userData = [];
+var data1;
 
 async function fetchData(searchedData){
     try {
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchedData}&appid=818e623f5a6175dd5045f7c9dcb6ec6a&units=metric`);
         const data = await response.json();
-        // renderData(data);
+        data1 = data;
         processData(data);
         
     } catch (error) {
-        console.error(error);
+        alert(data1.message);
     }
     
 
@@ -22,7 +23,6 @@ async function fetchData(searchedData){
 
 
 function processData(data){
-    console.log(data);
     const temp = Math.floor(data.main.temp)
     const temp_max = Math.floor(data.main.temp_max);
     const temp_min = Math.floor(data.main.temp_min);
