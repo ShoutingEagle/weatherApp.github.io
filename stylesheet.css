@@ -15,7 +15,7 @@
     border-radius: 44px;
     background: linear-gradient(136deg, #2E335A 0%, #1C1B33 100%);
     max-width: 1421px;
-    height: auto;
+    height: fit-content;
     margin-inline: auto;
     
 }
