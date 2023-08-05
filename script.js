@@ -51,7 +51,7 @@ function processData(data){
         country          :     Country,
     }
 
-    
+
     userData.push(a);
     if(userData.length>1){
         userData.sort((a,b) => {
@@ -93,6 +93,8 @@ function renderData (data){
         </div>`
     }
     
+    const searchedData = document.getElementById("search");
+    searchedData.value = '';
 
 }
 
@@ -103,7 +105,9 @@ function renderData (data){
 
 function addData(){
     const searchedData = document.getElementById("search").value;
-    
+    if(searchedData === ''){
+        return alert("Enter a city name");
+    }
     fetchData(searchedData);
 }
 
