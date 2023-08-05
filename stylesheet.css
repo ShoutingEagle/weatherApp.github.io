@@ -9,6 +9,11 @@
     font-family: 'Roboto', sans-serif;  
 }
 
+body{
+    background-color: #2F3144;
+}
+
+
 
 .container{
     margin-top: 50px;
