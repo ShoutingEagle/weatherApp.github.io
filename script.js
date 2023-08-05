@@ -30,6 +30,13 @@ function processData(data){
     const description = data.weather[0].description;
     const icon = data.weather[0].icon;
 
+
+
+    for(let i=0;i<userData.length;i++){
+        if(name === userData[i].cityName){
+            return alert('City already added');
+        }
+    }
     
 
     let a = {
@@ -41,12 +48,14 @@ function processData(data){
         image            :     icon,
     }
     
-    userData.push(a);
     if(userData.length>1){
         userData.sort((a,b) => {
             return a.temperature - b.temperature;
         });
     }
+    
+    userData.push(a);
+    
 
     renderData(data);
 }
@@ -97,11 +106,4 @@ function addData(){
 
 
 
-// var a = [];
-
-// c = {d:10};
-// a.push(9);
-// a.push(10);
-// a.push(c);
-// console.log(a);
 
